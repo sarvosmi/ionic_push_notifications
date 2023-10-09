@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">pushNotificationDemo</string>
+    <string name="title_activity_main">pushNotificationDemo</string>
+    <string name="package_name">push.notification.test</string>
+    <string name="custom_url_scheme">push.notification.test</string>
+</resources>
