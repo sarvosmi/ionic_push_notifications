@@ -1,10 +1,6 @@
 import { Component ,OnInit} from '@angular/core';
-import {
-  ActionPerformed,
-  PushNotificationSchema,
-  PushNotifications,
-  Token,
-} from '@capacitor/push-notifications';
+
+import { PushNotifications } from '@capacitor/push-notifications';
 
 @Component({
   selector: 'app-home',
@@ -41,9 +37,7 @@ export class HomePage implements OnInit {
     
     async registerPushNotifications()
     {
-      
-      try{
-        let permStatus = await PushNotifications.checkPermissions();      
+          let permStatus = await PushNotifications.checkPermissions();      
           alert(JSON.stringify(permStatus))
           if (permStatus.receive === 'prompt') {
             permStatus = await PushNotifications.requestPermissions();
@@ -58,11 +52,7 @@ export class HomePage implements OnInit {
               await PushNotifications.register();
             }
             catch(e){alert(JSON.stringify(e));}
-          }
-      }
-      catch(e:any){alert(JSON.stringify(e));}
-    
-     
+          }     
     }
 
     getDeliveredNotifications = async () => {
